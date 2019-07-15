@@ -1,31 +1,28 @@
-<div class="review" itemprop="reviews" itemscope itemtype="http://schema.org/Review">
-  <span class="reviews-rating" title="<%= txt_stars(review.rating) %>">
-    <%= render 'spree/reviews/stars', stars: review.rating %> <%= review.user.specific_name%>,  <%= "(" +  review.created_at.strftime("%e/%m/%Y").to_s + ")" %>
-  </span>
-  <!-- <span itemprop="name"><%#= review.title %></span> -->
-  <br/>
-  <!-- <span class="attribution"><%#= Spree.t(:submitted_on) %> -->
-    <!-- <strong><%#= l review.created_at.to_date %></strong> -->
-  <!-- </span> -->
-  <span itemprop="datePublished" content="<%= review.created_at.to_date.to_s %>"></span>
-  <span itemprop="reviewRating" content="<%= review.rating %>"></span>
-  <%# if review.show_identifier %>
-    <%# if Spree::Reviews::Config[:show_email] && review.user %>
-      <!-- <span itemprop="author"><%#= review.user.email %></span> -->
-    <%# else %>
-      <!-- <span itemprop="author"><%#= review.name %></span> -->
-    <%# end %>
-  <%# else %>
-    <!-- <span itemprop="author"><%#= Spree.t(:anonymous) %></span> -->
-  <%# end %>
-  <div itemprop="reviewBody">
-    <%= simple_format(review.review) %>
-  </div>
-  <%# if Spree::Reviews::Config[:feedback_rating] && (!Spree::Reviews::Config[:require_login] || spree_current_user) %>
-    <!-- <div class="feedback_review" id="feedback_review_<%#= review.id %>"> -->
-      <%#= render 'spree/feedback_reviews/form', review: review %>
-    <!-- </div> -->
-  <%# end %>
-</div>
+<div class="review-details-pro col-lg-12 col-md-12 col-sm-12 cloth-pd" itemprop="reviews" itemscope itemtype="http://schema.org/Review">
+  <ul>
+    <li>
+    <p><%= review.created_at.strftime("%e/%m/%Y").to_s %></p>
+    </li>                                  
+    <li>
+      <%= render partial: "spree/shared/review_star_filler", locals: {earned_stars: review.rating, color: "gray"}%>
+    </li>
+    <li>
+    <h3 class="mrt-10-top"><a href="#"><%= review.user.specific_name%></a></h3>
+    </li>  
+  </ul>
 
-<hr>
+  <div class="discription-dv">
+
+    <div class="tis-ls1">
+      <span class="more body2 text-justify">
+      <%= simple_format(review.review) %>
+      </span>
+
+    </div>                
+
+  </div>
+
+</div>
+<div class="clearfix"></div>
+<div class="dvd"></div>
+<div class="clearfix"></div>
