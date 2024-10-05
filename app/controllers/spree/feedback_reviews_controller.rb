@@ -1,3 +1,4 @@
-class Spree::FeedbackReviewsController
-  
+module Spree
+  class FeedbackReviewsController
+  end
 end
