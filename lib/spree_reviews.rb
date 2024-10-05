@@ -1,8 +1,9 @@
 require 'spree_core'
+require 'spree_extension'
+require 'spree_backend'
 require 'spree_reviews/engine'
 require 'spree_reviews/version'
-require 'spree_extension'
-require 'coffee_script'
+require 'deface'
 require 'sass/rails'
 
 module Spree
