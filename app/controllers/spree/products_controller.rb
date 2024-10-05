@@ -1,2 +1,4 @@
-class ProductsController
+module Spree
+  class ProductsController
+  end
 end
